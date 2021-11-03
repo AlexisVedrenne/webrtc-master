@@ -1,0 +1,64 @@
+
+<html>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<header>
+    <nav class="navbar navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="">Web RTC Asterisk</a>
+        </div>
+    </nav>
+</header>
+    <body>
+        <div class="container">
+            <div class="row mb-5 mt-2">
+                <label class="col-2">Entrez votre identifiant</label>
+                <div class="col-3"><input class="form-control" type="text" id="txtId" placeholder="Entrez votre identifiant ici..."></input></div>
+                <label class="col-2">Entrez votre mot de passe</label>
+                <div class="col-3"><input class="form-control" type="password" id="txtMdp" value="9999" placeholder="Entrez votre mot de passe ici..."></input></div>
+                <div class="col-2"><button id="btnConnexion" class="btn btn-success">Connexion</button></div>
+            </div>
+            <div class="row align-items-end">
+                <div class="col-2"><h5 id="hEtat"></h5></div>
+                <div class="col-2"><h5 id="hReg"></h5></div>
+            </div>
+            <div class="mt-2 row justify-content-md-center">
+                <div class="col-2"><input id="inNumber" class="form-control" type="number"></input></div>
+                <div class="col-2"><button id="btnContact" class="btn btn-primary" type="button">Lancer un appel</button></div>      
+            </div>
+
+            <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom">Ouvrir le chat</button>
+
+            <div class="offcanvas offcanvas-bottom" tabindex="-1" id="offcanvasBottom" aria-labelledby="offcanvasBottomLabel">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="offcanvasBottomLabel">Chat</h5>
+                    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body large">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-4"><input id="txtChat" class="form-control"></input></div>
+                            <div class="col-2"><button id="btnChat" class="btn btn-secondary">Envoyer</button></div>
+                            <textarea id="areChat" cols="30" rows="10" class="form-control" readonly></textarea>
+                        </div>
+                    </div>
+                    </div>
+            </div>
+            
+
+
+            <div class="mt-5 border row embed-responsive embed-responsive-16by9">
+                    <video id="recevier" class="embed-responsive-item" controls></video>
+                    <video id="emitter" class="embed-responsive-item" controls></video>
+            </div>
+        </div>
+
+        <script src="js/simplepeer.js"></script>
+        <script src="js/JsSip.js"></script>
+        <script src="js/app.js"></script>
+    </body>
+</html>
