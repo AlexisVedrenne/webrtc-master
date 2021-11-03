@@ -13,11 +13,11 @@ var session;
 
 
  function connexion(id,mdp){
-    socket = new JsSIP.WebSocketInterface('ws://192.168.0.38:8088/ws');
+    socket = new JsSIP.WebSocketInterface('wss://tel3.portierdiese.com');
     socket.via_transport = "tcp";
     var configuration = {
     sockets  : [ socket ],
-    uri      : id+'@192.168.0.38:5060',
+    uri      : id+'@tel3.portierdiese.com:5060',
     password : mdp
     };
 
